@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #12141c;
+  color: #f7f3ea;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2f40;
+  border-radius: 8px;
+}
+
+:focus-visible {
+  outline: 2px solid #2dd4bf;
+  outline-offset: 2px;
+}
+
+/* Perforated edge for receipt-style cards */
+.receipt-notch::before,
+.receipt-notch::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #12141c;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.receipt-notch::before {
+  left: -8px;
+}
+.receipt-notch::after {
+  right: -8px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.35s ease-out both;
+}
